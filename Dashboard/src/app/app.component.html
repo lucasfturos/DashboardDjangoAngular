@@ -1,0 +1,76 @@
+<header>
+  <nav class="navbar navbar-dark navbar-expand-lg purple_menu fixed-left">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#navbarOffcanvasLg"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="offcanvas purple_menu_mobile offcanvas-start"
+        tabindex="-1"
+        id="navbarOffcanvasLg"
+        aria-labelledby="navbarOffcanvasLgLabel"
+      >
+        <div class="offcanvas-header">
+          <button
+            type="button"
+            class="btn-close offcanvas-title"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a
+                class="nav-link active text-nowrap"
+                aria-current="page"
+                [routerLink]="['/']"
+              >
+                <div class="home">
+                  <ion-icon name="home-outline"></ion-icon>
+                  Início
+                </div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-nowrap" [routerLink]="['/base/']">
+                <div class="list">
+                  <ion-icon name="reader-outline"></ion-icon> Base de Dados
+                </div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active text-nowrap"
+                [routerLink]="['/produto/']"
+              >
+                <div class="list">
+                  <ion-icon name="clipboard-outline"></ion-icon>
+                  Produtos
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div
+            class="container-fluid d-flex justify-content-end flex-grow-3 pe-3"
+          >
+            <a href="" target="_blank">
+              <div class="login">
+                <ion-icon name="person-circle-outline"></ion-icon>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="container-fluid-body">
+  <router-outlet></router-outlet>
+</div>

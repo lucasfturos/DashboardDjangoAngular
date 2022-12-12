@@ -1,0 +1,59 @@
+.container-fluid-body {
+  margin-top: 50px;
+}
+
+header {
+  background-color: #505262;
+  width: 100%;
+  height: 35px;
+  position: relative;
+}
+
+a:link,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.purple_menu {
+  background-color: #505262;
+}
+
+.btn-close {
+  filter: invert(1);
+}
+
+.btn-purple {
+  background-color: #505262;
+  border: none;
+}
+
+.home .products {
+  font-size: 55px;
+  margin-top: 10px;
+  border-width: 0;
+}
+
+.purple_menu_mobile {
+  background-color: #505262;
+  color: #fff;
+  font-size: 20px;
+  height: 100%;
+  width: 200px;
+  border-bottom-right-radius: 10px;
+}
+
+.login {
+  display: flex;
+  align-self: flex-start;
+  border-width: 0;
+  font-size: 35px;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.nav-item,
+.active {
+  color: #cdcfd3;
+}

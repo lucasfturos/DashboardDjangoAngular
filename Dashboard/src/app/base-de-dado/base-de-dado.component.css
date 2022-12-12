@@ -1,0 +1,35 @@
+.table-color {
+  background-color: #505262;
+  color: #cdcfd3;
+}
+
+.table-hover td {
+  color: #cdcfd3;
+}
+.card {
+  background-color: #505262;
+}
+
+.estilo-titulo {
+  border: 10px solid #665dd1;
+  background-color: #665dd1;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.titulo {
+  color: #cdcfd3;
+}
+.input-group-text {
+  background-color: #665dd1;
+  color: #cdcfd3;
+  border: 2px solid #665dd1;
+}
+
+.btn-color {
+  background-color: #665dd1;
+  color: #cdcfd3;
+}
+.input-group {
+  border-radius: 5px;
+}
