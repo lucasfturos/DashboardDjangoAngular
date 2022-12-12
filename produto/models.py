@@ -1,12 +1,13 @@
 from django.db import models
 from django.urls import reverse
-from django.http import HttpResponse
+from usuario.models import ClienteFuncionario
+
 
 class Produto(models.Model):
     id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
     nome_produto = models.CharField(max_length=30)
     quantidade_produto = models.IntegerField(default=0)
-    preco_produto = models.DecimalField(max_digits=5, decimal_places=2)
+    preco_produto = models.DecimalField(max_digits=30, decimal_places=2)
     descricao_produto = models.TextField(max_length=256)
 
     def __str__(self):
@@ -15,3 +16,10 @@ class Produto(models.Model):
     def get_id_url(self):
         return reverse('produto_only', kwargs={'id': self.id_produto})
 
+
+class ProdutoLucro(models.Model):
+    id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
+    id_produto = models.ForeignKey('Produto', on_delete=models.CASCADE)
+    id_usuario = models.ForeignKey(ClienteFuncionario, on_delete=models.CASCADE)
+    total_lucro = models.DecimalField(max_digits=30, decimal_places=2)
+    quantidade_lucro = models.IntegerField(default=0)

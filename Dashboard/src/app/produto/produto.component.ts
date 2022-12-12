@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../services/produto/produto.service';
 import { Produto } from '../models/produto.model';
 
+
 @Component({
   selector: 'app-produto',
   templateUrl: './produto.component.html',
@@ -13,7 +14,8 @@ export class ProdutoComponent implements OnInit {
 
   constructor(
     private service: ProdutoService,
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.showAllData();

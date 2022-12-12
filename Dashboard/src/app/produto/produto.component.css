@@ -6,3 +6,29 @@
 .table-hover td {
   color: #cdcfd3;
 }
+
+.estilo-titulo {
+  border: 10px solid #665dd1;
+  background-color: #665dd1;
+  width: 100%;
+  border-radius: 5px;
+  color: #cdcfd3;
+}
+
+.titulo {
+  float: left;
+  margin: 5px auto auto 20px;
+}
+
+.add-produto {
+  float: right;
+  margin: 5px 30px auto auto;
+}
+
+.add-produto .create-icon n {
+  font-size: 25px;
+}
+
+.btn-warning {
+  margin-right: 10px;
+}

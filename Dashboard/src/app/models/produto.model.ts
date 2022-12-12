@@ -4,4 +4,5 @@ export class Produto {
     quantidade_produto?: number;
     descricao_produto?: string;
     preco_produto?: any;
+    isSelect: boolean = false;
 }

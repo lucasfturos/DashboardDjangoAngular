@@ -1,3 +1,4 @@
+import { CreateComponent } from './produto/create/create.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { NgModule } from '@angular/core';
@@ -8,6 +9,8 @@ import { BaseDeDadoComponent } from './base-de-dado/base-de-dado.component';
 const routes: Routes = [
   { path: 'produto', component: ProdutoComponent, data: { title: 'Produto' } },
   { path: 'produto/:id', component: ProdutoComponent, data: { title: 'Produto' } },
+  { path: 'create', component: CreateComponent, data: { title: 'Adiciona Produto' } },
+  { path: 'create/:id', component: CreateComponent, data: { title: 'Edita Produto' } },
   { path: 'base', component: BaseDeDadoComponent, data: { title: 'Base de Dados' } },
   { path: '404', component: NotFoundComponent, data: { title: 'Page not found' } },
   { path: '', component: HomeComponent, pathMatch: 'full', data: { title: 'Inicio' } }
