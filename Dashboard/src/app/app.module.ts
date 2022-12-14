@@ -9,6 +9,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BaseDeDadoComponent } from './base-de-dado/base-de-dado.component';
+import { ProdutoModule } from './produto/produto.module';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { BaseDeDadoComponent } from './base-de-dado/base-de-dado.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    ProdutoModule
   ],
   providers: [
     ProdutoService

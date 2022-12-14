@@ -5,7 +5,10 @@
         <h2 class="titulo">Controle de Produtos</h2>
       </div>
       <div class="col">
-        <button class="btn btn-success add-produto" [routerLink]="['create']">
+        <button
+          class="btn btn-success add-produto"
+          [routerLink]="['/produto/create']"
+        >
           <ion-icon class="create-icon" name="add-outline"></ion-icon>
         </button>
       </div>
@@ -29,7 +32,10 @@
         <td>{{ item.preco_produto }}</td>
         <td>
           <div class="grupo-acao">
-            <button class="btn btn-warning" [routerLink]="['create/', item.id]">
+            <button
+              class="btn btn-warning"
+              [routerLink]="['/produto/create', item.id]"
+            >
               <ion-icon name="create-outline"></ion-icon>
             </button>
             <button class="btn btn-danger">

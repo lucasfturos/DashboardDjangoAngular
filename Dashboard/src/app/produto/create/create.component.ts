@@ -11,10 +11,12 @@ export class CreateComponent implements OnInit {
 
   constructor(
     private activeRouter: ActivatedRoute,
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.getParamId = this.activeRouter.snapshot.paramMap.get('id');
+    console.log(this.getParamId)
   }
 
 }
