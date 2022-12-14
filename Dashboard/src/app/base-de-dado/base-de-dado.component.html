@@ -1,89 +1,4 @@
 <div class="container">
-  <div class="input-group">
-    <span class="input-group-text color-span-search" id="basic-addon3">
-      Pesquisa
-    </span>
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Nome de Usuários e de Produtos, Username, Email"
-    />
-    <button class="btn btn-color" type="button" id="button-addon2">
-      <ion-icon name="search-outline"></ion-icon>
-    </button>
-  </div>
-  <br />
-
-  <div class="card">
-    <div class="estilo-titulo">
-      <h2 class="text-center titulo">Lista de todos os Produtos</h2>
-    </div>
-    <table class="table table-hover table-color">
-      <thead>
-        <tr class="">
-          <th scope="col">Nome</th>
-          <th scope="col">Descricao</th>
-          <th scope="col">Quantidade</th>
-          <th scope="col">Preço</th>
-        </tr>
-      </thead>
-      <tbody *ngFor="let item of produto">
-        <tr>
-          <td>{{ item.nome_produto }}</td>
-          <td>{{ item.descricao_produto }}</td>
-          <td>{{ item.quantidade_produto }}</td>
-          <td>{{ item.preco_produto }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <br />
-  <div class="card">
-    <div class="estilo-titulo">
-      <h2 class="text-center titulo">Lista de todos os Clientes</h2>
-    </div>
-    <table class="table table-hover table-color">
-      <thead>
-        <tr class="">
-          <th scope="col">Nome</th>
-          <th scope="col">Email</th>
-          <th scope="col">User</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Teste</td>
-          <td>Teste</td>
-          <td>Teste</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <br />
-  <div class="card">
-    <div class="estilo-titulo">
-      <h2 class="text-center titulo">Lista de todos os Funcionários</h2>
-    </div>
-    <table class="table table-hover table-color">
-      <thead>
-        <tr class="">
-          <th scope="col">Nome</th>
-          <th scope="col">Email</th>
-          <th scope="col">Nível</th>
-          <th scope="col">Descrição</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Teste</td>
-          <td>Teste</td>
-          <td>Teste</td>
-          <td>Teste</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <br />
   <div class="card">
     <div class="estilo-titulo">
       <h2 class="text-center titulo">Lista do Lucro</h2>
@@ -104,6 +19,143 @@
         </tr>
       </tbody>
     </table>
+  </div>
+  <br />
+  <div class="input-group">
+    <span class="input-group-text color-span-search" id="basic-addon3">
+      Pesquisa
+    </span>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Nome de Usuários e de Produtos, Username, Email"
+    />
+    <button class="btn btn-color" type="button" id="button-addon2">
+      <ion-icon name="search-outline"></ion-icon>
+    </button>
+  </div>
+  <br />
+  <div class="card">
+    <button
+      class="btn btn-collapse"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseProduto"
+      aria-expanded="false"
+      aria-controls="collapseProduto"
+    >
+      Lista de Produtos
+      <ion-icon class="icon-collapse" name="chevron-down-outline"></ion-icon>
+    </button>
+    <div class="collapse" id="collapseProduto">
+      <br />
+      <div class="card">
+        <div class="estilo-titulo">
+          <h2 class="text-center titulo">Lista de todos os Produtos</h2>
+        </div>
+        <table class="table table-hover table-color">
+          <thead>
+            <tr class="">
+              <th scope="col">Nome</th>
+              <th scope="col">Descricao</th>
+              <th scope="col">Quantidade</th>
+              <th scope="col">Preço</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let item of produto">
+            <tr>
+              <td>{{ item.nome_produto }}</td>
+              <td>{{ item.descricao_produto }}</td>
+              <td>{{ item.quantidade_produto }}</td>
+              <td>{{ item.preco_produto }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br />
+    </div>
+  </div>
+
+  <br />
+  <div class="card">
+    <button
+      class="btn btn-collapse"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseCliente"
+      aria-expanded="false"
+      aria-controls="collapseCliente"
+    >
+      Lista de Clientes
+      <ion-icon class="icon-collapse" name="chevron-down-outline"></ion-icon>
+    </button>
+
+    <div class="collapse" id="collapseCliente">
+      <br />
+      <div class="card">
+        <div class="estilo-titulo">
+          <h2 class="text-center titulo">Lista de todos os Clientes</h2>
+        </div>
+        <table class="table table-hover table-color">
+          <thead>
+            <tr class="">
+              <th scope="col">Nome</th>
+              <th scope="col">Email</th>
+              <th scope="col">User</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Teste</td>
+              <td>Teste</td>
+              <td>Teste</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br />
+    </div>
+  </div>
+  <br />
+  <div class="card">
+    <button
+      class="btn btn-collapse"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseFuncionario"
+      aria-expanded="false"
+      aria-controls="collapseFuncionario"
+    >
+      Lista de Funcionários
+      <ion-icon class="icon-collapse" name="chevron-down-outline"></ion-icon>
+    </button>
+    <div class="collapse" id="collapseFuncionario">
+      <br />
+      <div class="card">
+        <div class="estilo-titulo">
+          <h2 class="text-center titulo">Lista de todos os Funcionários</h2>
+        </div>
+        <table class="table table-hover table-color">
+          <thead>
+            <tr class="">
+              <th scope="col">Nome</th>
+              <th scope="col">Email</th>
+              <th scope="col">Nível</th>
+              <th scope="col">Descrição</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Teste</td>
+              <td>Teste</td>
+              <td>Teste</td>
+              <td>Teste</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br />
+    </div>
   </div>
   <br />
 </div>

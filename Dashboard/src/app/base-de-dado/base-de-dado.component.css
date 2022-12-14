@@ -33,3 +33,14 @@
 .input-group {
   border-radius: 5px;
 }
+
+.icon-collapse {
+  float: right;
+  margin-top: 5px;
+}
+
+.btn-collapse {
+  background-color: #665dd1;
+  color: #cdcfd3;
+  height: 60px;
+}

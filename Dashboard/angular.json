@@ -13,9 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "allowedCommonJsDependencies": [
-
-            ],
+            "allowedCommonJsDependencies": [],
             "outputPath": "dist/dashboard",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -28,8 +26,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
