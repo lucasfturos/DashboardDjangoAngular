@@ -1,2 +1,58 @@
-<h1 style="color: #cdcfd3" *ngIf="!getParamId">Tela de cadastro</h1>
-<h1 style="color: #cdcfd3" *ngIf="getParamId">Tela de edição</h1>
+<div class="container">
+  <div class="card" style="background-color: #505262">
+    <h1 class="text-center titulo" *ngIf="!getParamId">Cadastro de Produtos</h1>
+    <h1 class="text-center titulo" *ngIf="getParamId">Atualizar Produto</h1>
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome_produto"
+            aria-describedby="nome_produto"
+            placeholder="Ex: Micro-ondas"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Descrição</label>
+          <textarea
+            type="t"
+            class="form-control"
+            id="descricao_produto"
+            aria-describedby="descricao_produto"
+            placeholder="Ex: Micro-ondas 15L com varias potencias"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Quantidade</label>
+          <input
+            type="number"
+            class="form-control"
+            id="quantidade_produto"
+            aria-describedby="quantidade_produto"
+            placeholder="Ex: 2000"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Preço</label>
+          <input
+            type="number"
+            class="form-control"
+            id="preco_produto"
+            aria-describedby="preco_produto"
+            placeholder="Ex: 2000.00"
+          />
+        </div>
+      </form>
+      <div class="text-center">
+        <button type="submit" *ngIf="!getParamId" class="btn btn-dark">
+          Cadastrar
+        </button>
+        <button type="submit" *ngIf="getParamId" class="btn btn-dark">
+          Atualizar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

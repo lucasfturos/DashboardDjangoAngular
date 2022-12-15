@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BaseDeDadoComponent } from './base-de-dado/base-de-dado.component';
 import { ProdutoModule } from './produto/produto.module';
+import { UserService } from './services/users/user.service';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ProdutoModule } from './produto/produto.module';
     ProdutoModule
   ],
   providers: [
-    ProdutoService
+    ProdutoService,
+    UserService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

@@ -79,8 +79,6 @@ OAUTH_AUTHORIZE_VIEW = 'principal.views.oauth_authorize'
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
         'rest_framework.renderers.JSONRenderer'
@@ -89,9 +87,14 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.JSONParser',
     ),
     'DEFAULT_PERMISSION_CLASSES': ( 
-        'rest_framework.permissions.IsAdminUser', 
-    ),
+        'rest_framework.permissions.IsAdminUser',
+        'rest_framework.permissions.IsAuthenticated',
 
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+       'rest_framework.authentication.SessionAuthentication',
+       'rest_framework.authentication.TokenAuthentication',
+   )
 }
 
 TEMPLATES = [

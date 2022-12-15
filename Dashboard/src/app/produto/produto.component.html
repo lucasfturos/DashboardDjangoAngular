@@ -1,4 +1,7 @@
 <div class="container">
+  <!-- <div class="alert alert-warning" *ngIf="warningAlert" role="alert">
+    Produto excluído com sucesso
+  </div> -->
   <div class="estilo-titulo text-center">
     <div class="row justify-content-start">
       <div class="col-sm-6">
@@ -38,7 +41,10 @@
             >
               <ion-icon name="create-outline"></ion-icon>
             </button>
-            <button class="btn btn-danger">
+            <button
+              (click)="warningAlert(item.id, item.nome_produto)"
+              class="btn btn-danger"
+            >
               <ion-icon name="close-outline"></ion-icon>
             </button>
           </div>

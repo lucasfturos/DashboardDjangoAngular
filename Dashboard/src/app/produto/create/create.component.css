@@ -1,0 +1,14 @@
+label {
+  color: #cdcfd3;
+  margin-bottom: 5px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.titulo {
+  color: #cdcfd3;
+  background-color: #665dd1;
+  max-width: 100%;
+  border: 10px solid #665dd1;
+  border-radius: 5px;
+}

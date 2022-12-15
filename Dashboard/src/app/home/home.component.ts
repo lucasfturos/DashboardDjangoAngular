@@ -1,6 +1,9 @@
+import { Produto } from './../models/produto.model';
+import { ProdutoService } from './../services/produto/produto.service';
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import Chart from 'chart.js/auto'
-
+import { Chart, registerables } from 'chart.js/auto'
+import { Observable } from 'rxjs';
+Chart.register(...registerables);
 
 @Component({
   selector: 'app-home',
@@ -13,6 +16,8 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild('doughnutCanvas1') doughnutCanvas1!: { nativeElement: any };
   @ViewChild('lineCanvas') lineCanvas: ElementRef | undefined;
   @ViewChild('lineCanvas1') lineCanvas1: ElementRef | undefined;
+  produto?: Produto[];
+  produtoQuantidade: any;
   doughnutChart: any;
   doughnutChart1: any;
   lineChart: any;
@@ -21,14 +26,37 @@ export class HomeComponent implements AfterViewInit {
   canvas: any;
   ctx: any;
 
-  constructor() { }
+  constructor(private serviceProduto: ProdutoService) { }
+
 
   ngAfterViewInit(): void {
     this.doughnutBrowser();
     this.lineChartMethod();
     this.barChartMethod();
-    this.doughnutBrowser1();
     this.lineChartMethod1();
+    this.produtoGetAll();
+  }
+
+  produtoGetAll() {
+    const initialValue = 0;
+    this.serviceProduto.getListProduto().subscribe({
+      next: (data) => {
+        this.produto = data;
+        this.produtoQuantidade = this.produto.map(prod => prod.quantidade_produto)
+          .reduce(
+            (soma: any, i) => {
+              if (i != null) {
+                return soma + i;
+              }
+            });
+        this.doughnutBrowser1(this.produtoQuantidade);
+      },
+      error: (e) => {
+        console.error(e)
+        this.doughnutBrowser1(0);
+      }
+
+    });
   }
 
   doughnutBrowser() {
@@ -37,27 +65,40 @@ export class HomeComponent implements AfterViewInit {
 
     this.doughnutChart = new Chart(this.ctx, {
       type: 'doughnut',
+      options: {
+        plugins: {
+          legend: {
+            display: false,
 
+          }
+        },
+      },
       data: {
         datasets: [
           {
-            backgroundColor: [
-              '#000000',
-              '#3498db',
-              '#95a5a6',
-              '#9b59b6',
-              '#f1c40f',
-              '#e74c3c',
+            borderColor: [
+              'transparent'
             ],
-            data: [12, 19, 3, 17, 28, 24],
+            backgroundColor: [
+
+              '#316C58',
+              '#2D4F4E',
+              '#29C770',
+            ],
+
+            data: [1002, 5000, 3000],
           },
         ],
-
+        labels: [
+          'Lucro bruto',
+          'Lucro liquido',
+          'Despesas'
+        ],
       },
     });
   }
 
-  doughnutBrowser1() {
+  doughnutBrowser1(prodCount: any) {
     this.canvas = this.doughnutCanvas1.nativeElement;
     this.ctx = this.canvas.getContext('2d');
 
@@ -66,20 +107,30 @@ export class HomeComponent implements AfterViewInit {
       options: {
         rotation: -90,
         circumference: 180,
+        plugins: {
+          legend: {
+            display: false,
+          }
+        },
       },
       data: {
         datasets: [
           {
-            backgroundColor: [
-              '#2ecc71',
-              '#3498db',
-              '#95a5a6',
-              '#9b59b6',
-              '#f1c40f',
-              '#e74c3c',
+            borderColor: [
+              'transparent'
             ],
-            data: [12, 19, 3, 17, 28, 24],
+            backgroundColor: [
+              '#E55356',
+              '#119FB7',
+              '#665dd1'
+            ],
+            data: [1000, 1000, prodCount],
           },
+        ],
+        labels: [
+          'Clientes',
+          'Funcionários',
+          'Produtos'
         ],
       },
     });
@@ -106,19 +157,19 @@ export class HomeComponent implements AfterViewInit {
           {
             label: 'Sell per week',
             //  lineTension: 0.2,
-            fill: false,
-            backgroundColor: 'rgba(75,192,192,0.4)',
-            borderColor: 'rgba(75,192,192,1)',
+            fill: true,
+            backgroundColor: 'rgba(28,179,204, 0.7)',
+            borderColor: 'rgb(28,179,204)',
             borderCapStyle: 'butt',
             borderDash: [],
             borderDashOffset: 0.0,
             borderJoinStyle: 'miter',
-            pointBorderColor: 'rgba(75,192,192,1)',
+            pointBorderColor: 'rgb(28,179,204)',
             pointBackgroundColor: '#fff',
             pointBorderWidth: 1,
             pointHoverRadius: 5,
-            pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-            pointHoverBorderColor: 'rgba(220,220,220,1)',
+            pointHoverBackgroundColor: 'rgb(28,179,204)',
+            pointHoverBorderColor: 'rgb(28,179,204)',
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
@@ -150,20 +201,18 @@ export class HomeComponent implements AfterViewInit {
         datasets: [
           {
             label: 'Sell per week',
-            //  lineTension: 0.2,
-            fill: false,
-            backgroundColor: 'rgba(75,192,192,0.4)',
-            borderColor: 'rgba(75,192,192,1)',
+            fill: true,
+            backgroundColor: 'rgba(96,88,195, 0.5)',
+            borderColor: 'rgb(96,88,195)',
             borderCapStyle: 'butt',
             borderDash: [],
             borderDashOffset: 0.0,
             borderJoinStyle: 'miter',
-            pointBorderColor: 'rgba(75,192,192,1)',
-            pointBackgroundColor: '#fff',
+            pointBorderColor: 'rgb(96,88,195)',
             pointBorderWidth: 1,
             pointHoverRadius: 5,
-            pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-            pointHoverBorderColor: 'rgba(220,220,220,1)',
+            pointHoverBackgroundColor: 'rgb(96,88,195)',
+            pointHoverBorderColor: 'rgb(96,88,195)',
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
@@ -214,3 +263,9 @@ export class HomeComponent implements AfterViewInit {
     });
   }
 }
+
+
+// rgb(96,88,195) color line
+// '#29C770', custos
+// '#316C58', lucro bruto
+// '#2D4F4E', lucro liquido
