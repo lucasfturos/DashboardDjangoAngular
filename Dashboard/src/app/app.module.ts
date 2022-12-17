@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BaseDeDadoComponent } from './base-de-dado/base-de-dado.component';
 import { ProdutoModule } from './produto/produto.module';
 import { UserService } from './services/users/user.service';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { UserService } from './services/users/user.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    ProdutoModule
+    ProdutoModule,
+    OverlayModule
   ],
   providers: [
     ProdutoService,

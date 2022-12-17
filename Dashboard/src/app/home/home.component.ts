@@ -13,13 +13,15 @@ Chart.register(...registerables);
 export class HomeComponent implements AfterViewInit {
   @ViewChild('barCanvas') barCanvas: ElementRef | undefined;
   @ViewChild('doughnutCanvas') doughnutCanvas!: { nativeElement: any };
-  @ViewChild('doughnutCanvas1') doughnutCanvas1!: { nativeElement: any };
+  @ViewChild('conteudoCadastradoCanvas') conteudoCadastradoCanvas!: { nativeElement: any };
   @ViewChild('lineCanvas') lineCanvas: ElementRef | undefined;
   @ViewChild('lineCanvas1') lineCanvas1: ElementRef | undefined;
   produto?: Produto[];
   produtoQuantidade: any;
+  clienteQuantidade: any;
+  funcionarioQuantidade: any;
   doughnutChart: any;
-  doughnutChart1: any;
+  conteudoCadastradoChart: any;
   lineChart: any;
   lineChart1: any;
   barChart: any;
@@ -49,11 +51,14 @@ export class HomeComponent implements AfterViewInit {
                 return soma + i;
               }
             });
-        this.doughnutBrowser1(this.produtoQuantidade);
+        this.conteudoCadastradoBrowser(
+          this.clienteQuantidade = 1000,
+          this.funcionarioQuantidade = 1000,
+          this.produtoQuantidade);
       },
       error: (e) => {
         console.error(e)
-        this.doughnutBrowser1(0);
+        this.conteudoCadastradoBrowser(0, 0, 0);
       }
 
     });
@@ -68,8 +73,11 @@ export class HomeComponent implements AfterViewInit {
       options: {
         plugins: {
           legend: {
-            display: false,
-
+            display: true,
+            align: 'start',
+            labels: {
+              color: '#cdcfd3'
+            }
           }
         },
       },
@@ -98,19 +106,24 @@ export class HomeComponent implements AfterViewInit {
     });
   }
 
-  doughnutBrowser1(prodCount: any) {
-    this.canvas = this.doughnutCanvas1.nativeElement;
+  conteudoCadastradoBrowser(clienteCount: any, funcionarioCount: any, produtoCount: any) {
+    this.canvas = this.conteudoCadastradoCanvas.nativeElement;
     this.ctx = this.canvas.getContext('2d');
 
-    this.doughnutChart1 = new Chart(this.ctx, {
+    this.conteudoCadastradoChart = new Chart(this.ctx, {
       type: 'doughnut',
       options: {
         rotation: -90,
         circumference: 180,
         plugins: {
           legend: {
-            display: false,
-          }
+            display: true,
+            align: 'start',
+            labels: {
+              color: '#cdcfd3'
+            }
+          },
+
         },
       },
       data: {
@@ -124,7 +137,7 @@ export class HomeComponent implements AfterViewInit {
               '#119FB7',
               '#665dd1'
             ],
-            data: [1000, 1000, prodCount],
+            data: [clienteCount, funcionarioCount, produtoCount],
           },
         ],
         labels: [
