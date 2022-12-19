@@ -11,8 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BaseDeDadoComponent } from './base-de-dado/base-de-dado.component';
 import { ProdutoModule } from './produto/produto.module';
 import { UserService } from './services/users/user.service';
-import { OverlayModule } from '@angular/cdk/overlay';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog'
 
 @NgModule({
   declarations: [
@@ -29,13 +29,16 @@ import { OverlayModule } from '@angular/cdk/overlay';
     FormsModule,
     ReactiveFormsModule,
     ProdutoModule,
-    OverlayModule
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
   providers: [
     ProdutoService,
     UserService
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

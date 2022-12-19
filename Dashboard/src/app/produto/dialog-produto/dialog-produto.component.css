@@ -1,0 +1,12 @@
+* {
+  font-size: medium;
+}
+
+.btn-success {
+  float: right;
+}
+
+.btn-success,
+.btn-danger {
+  bottom: 0;
+}

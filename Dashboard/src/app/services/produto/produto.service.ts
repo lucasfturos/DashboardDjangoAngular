@@ -11,26 +11,26 @@ export class ProdutoService {
 
   private apiRoot = 'http://localhost:8000/produto/'
 
-  constructor(private _http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getListProduto(): Observable<Produto[]> {
-    return this._http.get<Produto[]>(this.apiRoot);
+    return this.http.get<Produto[]>(this.apiRoot);
   }
 
   getOnlyProduto(id: any): Observable<Produto> {
-    return this._http.get<Produto>(`${this.apiRoot}${id}`);
+    return this.http.get<Produto>(`${this.apiRoot}${id}`);
   }
 
   createProduto(data: any): Observable<any> {
-    return this._http.post(`${this.apiRoot}create`, data);
+    return this.http.post(`${this.apiRoot}create`, data);
   }
 
   updateProduto(data: any, id: any): Observable<any> {
-    return this._http.put(`${this.apiRoot}create/${id}`, data);
+    return this.http.put(`${this.apiRoot}create/${id}`, data);
   }
 
   destroyProduto(id: any): Observable<any> {
-    return this._http.delete(`${this.apiRoot}${id}`);
+    return this.http.delete(`${this.apiRoot}${id}`);
   }
 
 }

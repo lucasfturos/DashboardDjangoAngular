@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <h2 mat-dialog-title>Deseja excluir o produto {{ data }}?</h2>
+  <div mat-dialog-actions>
+    <button
+      mat-button
+      class="btn btn-danger"
+      (click)="closeDialog()"
+      mat-flat-button
+    >
+      Cancelar
+    </button>
+    <button
+      mat-button
+      mat-flat-button
+      class="btn btn-success"
+      (click)="confirmDelete($event)"
+    >
+      Ok
+    </button>
+  </div>
+</div>

@@ -1,6 +1,9 @@
+import { DialogProdutoComponent } from './dialog-produto/dialog-produto.component';
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../services/produto/produto.service';
 import { Produto } from '../models/produto.model';
+import { MatDialog } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-produto',
@@ -13,6 +16,7 @@ export class ProdutoComponent implements OnInit {
 
   constructor(
     private service: ProdutoService,
+    private dialog: MatDialog,
   ) { }
 
   ngOnInit(): void {
@@ -37,9 +41,10 @@ export class ProdutoComponent implements OnInit {
   }
 
   async warningAlert(id: any, nomeProduto: any) {
-    let opc = confirm('Deseja excluir o produto ' + nomeProduto + '?');
-    if (opc == true) {
-      this.deleteData(id);
-    }
+    this.dialog.open(DialogProdutoComponent, {
+      width: '350px',
+      height: '20%',
+      data: nomeProduto,
+    });
   }
 }
