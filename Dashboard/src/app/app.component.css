@@ -3,7 +3,7 @@
 }
 
 header {
-  background-color: #505262;
+  background-color: #665dd1;
   width: 100%;
   height: 35px;
   position: relative;
@@ -17,7 +17,7 @@ a:active {
 }
 
 .purple_menu {
-  background-color: #505262;
+  background-color: #665dd1;
 }
 
 .btn-close {
@@ -25,8 +25,9 @@ a:active {
 }
 
 .btn-purple {
-  background-color: #505262;
+  background-color: #665dd1;
   border: none;
+  color: #cdcfd3;
 }
 
 .home .products {
@@ -36,8 +37,8 @@ a:active {
 }
 
 .purple_menu_mobile {
-  background-color: #505262;
-  color: #fff;
+  background-color: #665dd1;
+  color: #cdcfd3;
   font-size: 20px;
   height: 100%;
   width: 200px;
