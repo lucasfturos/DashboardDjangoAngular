@@ -8,22 +8,22 @@ import { Produto } from 'src/app/models/produto.model';
   selector: 'app-dialog-produto',
   templateUrl: './dialog-produto.component.html',
   styleUrls: ['./dialog-produto.component.css'],
-  providers: [ProdutoService]
 })
 export class DialogProdutoComponent {
-  local_data: any;
-  action?: string;
 
   constructor(
-    private dialogRef: DialogRef<DialogProdutoComponent>,
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: Produto,
+    public dialogRef: DialogRef<DialogProdutoComponent>,
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any,
+    private service: ProdutoService
   ) { }
 
-  confirmDelete(ev: any) {
-
+  deleteData(id: any): void {
+    this.service.destroyProduto(id).subscribe(res => {
+      window.location.reload();
+    })
   }
-
-  closeDialog() {
+  onConfirmClick(): void {
+    this.deleteData(this.data.id_produto);
     this.dialogRef.close();
   }
 }

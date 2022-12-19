@@ -2,11 +2,10 @@
   font-size: medium;
 }
 
-.btn-success {
-  float: right;
+.input-group {
+  width: 100%;
 }
-
-.btn-success,
-.btn-danger {
-  bottom: 0;
+.btn {
+  width: 50%;
+  border-radius: 2px;
 }

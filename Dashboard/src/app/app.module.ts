@@ -12,7 +12,8 @@ import { BaseDeDadoComponent } from './base-de-dado/base-de-dado.component';
 import { ProdutoModule } from './produto/produto.module';
 import { UserService } from './services/users/user.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule } from '@angular/material/dialog'
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MatDialogModule } from '@angular/material/dialog'
     ProdutoModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    MatButtonModule
   ],
   providers: [
     ProdutoService,

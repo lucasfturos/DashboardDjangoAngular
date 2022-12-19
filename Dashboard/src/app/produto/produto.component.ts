@@ -1,3 +1,4 @@
+import { DialogRef } from '@angular/cdk/dialog';
 import { DialogProdutoComponent } from './dialog-produto/dialog-produto.component';
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../services/produto/produto.service';
@@ -34,17 +35,15 @@ export class ProdutoComponent implements OnInit {
       });
   }
 
-  deleteData(id: any): void {
-    this.service.destroyProduto(id).subscribe(res => {
-      window.location.reload();
-    })
-  }
-
   async warningAlert(id: any, nomeProduto: any) {
-    this.dialog.open(DialogProdutoComponent, {
+    const dialogRef = this.dialog.open(DialogProdutoComponent, {
       width: '350px',
       height: '20%',
-      data: nomeProduto,
+      data: {
+        produto: nomeProduto,
+        id_produto: id
+      },
+      disableClose: false
     });
   }
 }
