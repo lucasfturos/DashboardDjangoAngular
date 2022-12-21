@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ProdutoService } from './services/produto/produto.service';
@@ -7,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProdutoComponent } from './produto/produto.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BaseDeDadoComponent } from './base-de-dado/base-de-dado.component';
 import { ProdutoModule } from './produto/produto.module';
 import { UserService } from './services/users/user.service';
@@ -26,13 +26,13 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     ProdutoModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   providers: [
     ProdutoService,

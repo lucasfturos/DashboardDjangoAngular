@@ -14,7 +14,7 @@ class Produto(models.Model):
         return 'Produto: {}, Disponível: {} unidades'.format( self.nome_produto, self.quantidade_produto)
 
     def get_id_url(self):
-        return reverse('produto_only', kwargs={'id': self.id_produto})
+        return reverse('produto_only', kwargs={'id': self.id})
 
 
 class ProdutoLucro(models.Model):
