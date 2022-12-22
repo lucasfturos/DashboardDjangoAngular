@@ -23,6 +23,11 @@
 .add-produto {
   float: right;
   margin: 5px 30px auto auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 50px;
+  height: 50px;
 }
 
 .add-produto .create-icon n {
@@ -31,4 +36,16 @@
 
 .btn-warning {
   margin-right: 10px;
+}
+
+.btn-warning,
+.btn-danger {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 50px;
+  height: 50px;
+}
+.grupo-acao {
+  display: inline-flex;
 }

@@ -23,3 +23,9 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.createContainer .mat-dialog-container {
+  background-color: transparent !important;
+  box-shadow: none;
+  overflow-y: hidden;
+}

@@ -21,12 +21,13 @@ export class ProdutoService {
     return this.http.get<Produto>(`${this.apiRoot}${id}`);
   }
 
-  createProduto(data: any): Observable<any> {
-    return this.http.post(`${this.apiRoot}create`, data);
+  createProduto(data: Partial<Produto>): Observable<any> {
+    return this.http.post(`${this.apiRoot}create/`, data);
   }
 
-  updateProduto(data: any, id: any): Observable<any> {
-    return this.http.put(`${this.apiRoot}create/${id}`, data);
+  updateProduto(data: Partial<Produto>, id: any): Observable<any> {
+    let ids = id;
+    return this.http.put(`${this.apiRoot}create/${ids}`, data);
   }
 
   destroyProduto(id: any): Observable<any> {

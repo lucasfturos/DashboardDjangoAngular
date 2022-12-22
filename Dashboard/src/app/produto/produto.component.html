@@ -5,12 +5,12 @@
   <div class="estilo-titulo text-center">
     <div class="row justify-content-start">
       <div class="col-sm-6">
-        <h2 class="titulo">Controle de Produtos</h2>
+        <h2 class="titulo text-nowrap">Controle de Produtos</h2>
       </div>
       <div class="col">
         <button
           class="btn btn-success add-produto"
-          [routerLink]="['/produto/create']"
+          (click)="createProdutoDialog(-1)"
         >
           <ion-icon class="create-icon" name="add-outline"></ion-icon>
         </button>
@@ -37,7 +37,7 @@
           <div class="grupo-acao">
             <button
               class="btn btn-warning"
-              [routerLink]="['/produto/create', item.id]"
+              (click)="createProdutoDialog(item.id)"
             >
               <ion-icon name="create-outline"></ion-icon>
             </button>

@@ -1,4 +1,3 @@
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ProdutoService } from './services/produto/produto.service';
@@ -26,8 +25,6 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
     ProdutoModule,
     BrowserAnimationsModule,

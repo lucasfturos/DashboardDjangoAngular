@@ -4,8 +4,6 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework import status, permissions
 from django.shortcuts import get_object_or_404
-from django.http import HttpResponse
-
 
 class ProdutoView:
     @api_view(['GET'])
@@ -34,8 +32,8 @@ class ProdutoView:
     @api_view(['PUT'])
     @permission_classes((permissions.AllowAny,))
     def update_Produto(request, id):
-        produto = get_object_or_404(Produto, id=id)
-        produto_serializer = Produto_Serializer(produto,many=True)
+        produto = Produto.objects.get(id=id)
+        produto_serializer = Produto_Serializer(produto,data=request.data)
         if produto_serializer.is_valid():
             produto_serializer.save()
             return Response(produto_serializer.data, status=status.HTTP_201_CREATED)

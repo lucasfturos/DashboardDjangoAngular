@@ -1,9 +1,9 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { CreateComponent } from './create/create.component';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProdutoRoutingModule } from './produto-routing.module';
 import { DialogProdutoComponent } from './dialog-produto/dialog-produto.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,9 +13,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    ProdutoRoutingModule,
+    BrowserModule,
     ReactiveFormsModule,
-    FormsModule
-  ]
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
 })
 export class ProdutoModule { }

@@ -5,10 +5,25 @@ label {
 .form-group {
   margin-bottom: 20px;
 }
-.titulo {
+.estilo-titulo {
   color: #cdcfd3;
   background-color: #665dd1;
   max-width: 100%;
   border: 10px solid #665dd1;
   border-radius: 5px;
+}
+.titulo {
+  float: left;
+  margin: 5px auto auto 20px;
+}
+
+.btn-fechar {
+  color: #fff;
+  float: right;
+  margin: 5px 30px auto auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
 }
