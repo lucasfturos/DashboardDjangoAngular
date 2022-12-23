@@ -6,5 +6,5 @@ urlpatterns = [
     path('produto/<int:id>', ProdutoView.get_Only_Produto, name='produto_only'),
     path('produto/create/', ProdutoView.create_Produto, name='produto_create'),
     path('produto/create/<int:id>', ProdutoView.update_Produto, name='produto_edit'),
-    path('produto/<int:id>', ProdutoView.destroy_Produto, name='produto_delete'),
+    path('produto/<int:id>/', ProdutoView.destroy_Produto, name='produto_delete'),
 ]

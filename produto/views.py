@@ -43,7 +43,7 @@ class ProdutoView:
     @permission_classes((permissions.AllowAny,))
     def destroy_Produto(request, id):
         if request.method == 'DELETE':
-            produto = get_object_or_404(Produto, id=id)
+            produto = Produto.objects.get(id=id)
             produto.delete()
             return Response('Produto excluido com sucesso', status=status.HTTP_200_OK)
         return Response('O produto selecionado não existe', status=status.HTTP_204_NO_CONTENT)

@@ -1,7 +1,6 @@
 import { Produto } from './../../models/produto.model';
 import { ProdutoService } from './../../services/produto/produto.service';
-import { ActivatedRoute } from '@angular/router';
-import { Component, Inject, OnInit, Optional } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { NonNullableFormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
@@ -10,49 +9,43 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css'],
 })
-export class CreateComponent implements OnInit {
+export class CreateComponent {
   getParamId: any;
   isSubmitted: boolean = false;
   formProduto!: FormGroup;
-  produto!: Produto;
+  produto: any;
 
   constructor(
-    private activeRouter: ActivatedRoute,
     private service: ProdutoService,
     private formBuilder: NonNullableFormBuilder,
     public dialogRefCreate: MatDialogRef<CreateComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
-  ) { }
+    @Inject(MAT_DIALOG_DATA) public id_produto: any,
+  ) {
+    this.formProduto = formBuilder.group({
+      nome_produto: new FormControl(''),
+      descricao_produto: new FormControl(''),
+      preco_produto: new FormControl(0),
+      quantidade_produto: new FormControl(0),
+    });
+    if (this.id_produto == -1) {
+      this.createForm(new Produto());
+    }
 
-  ngOnInit(): void {
-    this.createForm(new Produto());
+    console.log(this.id_produto);
 
-    console.log(this.data);
-
-    if (this.data != -1) {
-      this.service.getOnlyProduto(this.data)
+    if (this.id_produto != -1) {
+      this.service.getOnlyProduto(this.id_produto)
         .subscribe({
-          next: (res: Produto) => {
-            this.produto = res;
-            this.setUpdateValues(this.produto, this.data);
+          next: (data) => {
+            console.log(data);
+            if (!!data) {
+              this.produto = data;
+              this.setUpdateValues(this.produto);
+            }
           },
           error: (e) => console.error(e)
         });
     }
-  }
-
-  setUpdateValues(produto: Produto, id: number) {
-    console.log('Res: ', produto);
-    this.formProduto.patchValue({
-      nome_produto: produto.nome_produto,
-      descricao_produto: produto.descricao_produto,
-      preco_produto: produto.preco_produto,
-      quantidade_produto: produto.quantidade_produto,
-    });
-  }
-
-  get errorControl() {
-    return this.formProduto.controls;
   }
 
   createForm(produto: Produto) {
@@ -62,6 +55,19 @@ export class CreateComponent implements OnInit {
       preco_produto: [produto.preco_produto],
       quantidade_produto: [produto.quantidade_produto],
     });
+  }
+
+  setUpdateValues(produto: any) {
+    this.formProduto.patchValue({
+      nome_produto: produto[0].nome_produto,
+      descricao_produto: produto[0].descricao_produto,
+      preco_produto: produto[0].preco_produto,
+      quantidade_produto: produto[0].quantidade_produto
+    });
+  }
+
+  get errorControl() {
+    return this.formProduto.controls;
   }
 
   onSubmit() {
@@ -86,12 +92,11 @@ export class CreateComponent implements OnInit {
     }
     if (this.formProduto.valid) {
       console.log(this.formProduto.value);
-      this.service.updateProduto(this.formProduto.value, this.data).subscribe((res) => {
+      this.service.updateProduto(this.formProduto.value, this.id_produto).subscribe((res) => {
         console.log('res:', res);
         this.formProduto.reset();
       });
       window.location.reload();
     }
   }
-
 }

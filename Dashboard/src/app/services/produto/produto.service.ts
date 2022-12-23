@@ -26,12 +26,11 @@ export class ProdutoService {
   }
 
   updateProduto(data: Partial<Produto>, id: any): Observable<any> {
-    let ids = id;
-    return this.http.put(`${this.apiRoot}create/${ids}`, data);
+    return this.http.put(`${this.apiRoot}create/${id}`, data);
   }
 
   destroyProduto(id: any): Observable<any> {
-    return this.http.delete(`${this.apiRoot}${id}`);
+    return this.http.delete(`${this.apiRoot}${id}/`);
   }
 
 }

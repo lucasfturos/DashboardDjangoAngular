@@ -14,7 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     BrowserModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
