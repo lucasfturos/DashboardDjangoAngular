@@ -74,7 +74,7 @@ export class HomeComponent implements AfterViewInit {
         plugins: {
           legend: {
             display: true,
-            align: 'start',
+            align: 'center',
             labels: {
               color: '#cdcfd3'
             }
@@ -118,7 +118,7 @@ export class HomeComponent implements AfterViewInit {
         plugins: {
           legend: {
             display: true,
-            align: 'start',
+            align: 'center',
             labels: {
               color: '#cdcfd3'
             }
