@@ -15,6 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { PainelAdminComponent } from './views/painel-admin/painel-admin.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     NotFoundComponent,
     HomeComponent,
     BaseDeDadoComponent,
+    PainelAdminComponent,
   ],
   imports: [
     BrowserModule,
