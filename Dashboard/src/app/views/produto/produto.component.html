@@ -1,4 +1,23 @@
 <div class="container">
+  <div class="input-group">
+    <span class="input-group-text color-span-search" id="basic-addon3">
+      Nome Produto
+    </span>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ex: Forno elétrico"
+      #searchInput
+      name="searchInput"
+      autocomplete="off"
+    />
+    <button class="btn btn-light" type="button" (click)="showSearchProduto()">
+      <ion-icon name="search-outline"></ion-icon>
+    </button>
+    <button class="btn btn-light" type="button" (click)="cleanSearch()">
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+  </div>
   <div class="estilo-titulo text-center">
     <div class="row justify-content-start">
       <div class="col-sm-6">
@@ -25,7 +44,7 @@
           <th scope="col">Ações</th>
         </tr>
       </thead>
-      <tbody *ngFor="let item of produto">
+      <tbody *ngFor="let item of produto | filter : search">
         <tr>
           <td>{{ item.nome_produto }}</td>
           <td>{{ item.descricao_produto }}</td>

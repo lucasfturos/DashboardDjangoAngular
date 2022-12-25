@@ -1,5 +1,5 @@
 import { DeleteProdutoComponent } from './delete/delete.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ProdutoService } from '../../services/produto/produto.service';
 import { Produto } from '../../models/produto.model';
 import { MatDialog } from '@angular/material/dialog';
@@ -14,6 +14,8 @@ import { CreateComponent } from './create/create.component';
 export class ProdutoComponent implements OnInit {
   itens: any;
   produto?: Produto[];
+  search!: any;
+  @ViewChild('searchInput', { static: true }) searchInput?: any;
 
   constructor(
     private service: ProdutoService,
@@ -22,6 +24,16 @@ export class ProdutoComponent implements OnInit {
 
   ngOnInit(): void {
     this.showAllData();
+    this.showSearchProduto();
+  }
+
+  showSearchProduto() {
+    this.search = this.searchInput.nativeElement.value
+  }
+
+  cleanSearch() {
+    this.searchInput.nativeElement.value = '';
+    this.showSearchProduto();
   }
 
   showAllData(): void {

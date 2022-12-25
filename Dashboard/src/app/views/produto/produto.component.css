@@ -39,7 +39,8 @@
 }
 
 .btn-warning,
-.btn-danger {
+.btn-danger,
+.btn-light {
   justify-content: center;
   align-items: center;
   display: flex;
@@ -48,4 +49,25 @@
 }
 .grupo-acao {
   display: inline-flex;
+}
+
+.input-group-text {
+  background-color: #665dd1;
+  color: #cdcfd3;
+  border: 2px solid #665dd1;
+}
+
+.btn-light {
+  background-color: #665dd1;
+  color: #cdcfd3;
+  border: none;
+}
+
+.btn-light:hover {
+  opacity: 0.9;
+}
+
+.input-group {
+  border-radius: 5px;
+  margin-bottom: 15px;
 }

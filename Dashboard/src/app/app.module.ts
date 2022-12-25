@@ -13,6 +13,8 @@ import { UserService } from './services/users/user.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -26,10 +28,12 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     ProdutoModule,
     BrowserAnimationsModule,
     MatDialogModule,
     MatButtonModule,
+    Ng2SearchPipeModule,
   ],
   providers: [
     ProdutoService,
