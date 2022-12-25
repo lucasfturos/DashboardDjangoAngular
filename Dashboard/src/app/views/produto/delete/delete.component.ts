@@ -1,18 +1,17 @@
 import { DialogRef } from '@angular/cdk/dialog';
-import { ProdutoService } from './../../services/produto/produto.service';
+import { ProdutoService } from '../../../services/produto/produto.service';
 import { Component, Inject, Optional } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Produto } from 'src/app/models/produto.model';
 
 @Component({
-  selector: 'app-dialog-produto',
-  templateUrl: './dialog-produto.component.html',
-  styleUrls: ['./dialog-produto.component.css'],
+  selector: 'app-delete-produto',
+  templateUrl: './delete.component.html',
+  styleUrls: ['./delete.component.css'],
 })
-export class DialogProdutoComponent {
+export class DeleteProdutoComponent {
 
   constructor(
-    public dialogRef: DialogRef<DialogProdutoComponent>,
+    public dialogRef: DialogRef<DeleteProdutoComponent>,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: any,
     private service: ProdutoService
   ) { }

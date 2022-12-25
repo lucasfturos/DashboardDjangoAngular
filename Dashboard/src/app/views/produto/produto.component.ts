@@ -1,7 +1,7 @@
-import { DialogProdutoComponent } from './dialog-produto/dialog-produto.component';
+import { DeleteProdutoComponent } from './delete/delete.component';
 import { Component, OnInit } from '@angular/core';
-import { ProdutoService } from '../services/produto/produto.service';
-import { Produto } from '../models/produto.model';
+import { ProdutoService } from '../../services/produto/produto.service';
+import { Produto } from '../../models/produto.model';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateComponent } from './create/create.component';
 
@@ -45,7 +45,7 @@ export class ProdutoComponent implements OnInit {
   }
 
   async warningAlert(id: any, nomeProduto: any) {
-    const dialogRef = this.dialog.open(DialogProdutoComponent, {
+    const dialogRef = this.dialog.open(DeleteProdutoComponent, {
       width: '350px',
       height: '20%',
       data: {

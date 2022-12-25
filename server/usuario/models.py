@@ -25,4 +25,4 @@ class NiveisUsuario(models.Model):
     descricao_niveis = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.nome_niveis
+        return 'O nível {} é {}'.format(self.nome_niveis,self.descricao_niveis)
