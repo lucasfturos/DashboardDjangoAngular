@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NonNullableFormBuilder } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialogRefCreate: MatDialogRef<CreateComponent>,
+    private formBuilder: NonNullableFormBuilder,
+  ) { }
 
   ngOnInit(): void {
   }

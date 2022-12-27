@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateComponent } from './create/create.component';
 
 @Component({
   selector: 'app-superuser',
   templateUrl: './superuser.component.html',
   styleUrls: ['./superuser.component.css']
 })
-export class SuperuserComponent implements OnInit {
+export class SuperuserComponent {
 
-  constructor() { }
+  constructor(
+    private dialog: MatDialog,
+  ) { }
 
-  ngOnInit(): void {
+  showCadastro() {
+    this.dialog.open(CreateComponent, {
+      width: '80%',
+      height: '95%',
+      panelClass: 'createUserContainer'
+    })
   }
 
 }

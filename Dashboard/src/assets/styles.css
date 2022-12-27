@@ -24,7 +24,13 @@ body {
   margin: 0;
 }
 
-.createContainer .mat-dialog-container {
+.createProdutoContainer .mat-dialog-container {
+  background-color: transparent !important;
+  box-shadow: none;
+  overflow-y: hidden;
+}
+
+.createUserContainer .mat-dialog-container {
   background-color: transparent !important;
   box-shadow: none;
   overflow-y: hidden;

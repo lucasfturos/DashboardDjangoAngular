@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ControleUsuarioComponent } from './views/controle-usuario/controle-usuario.component';
+import { SuperuserModule } from './views/superuser/superuser.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ControleUsuarioComponent } from './views/controle-usuario/controle-usua
     HttpClientModule,
     ReactiveFormsModule,
     ProdutoModule,
+    SuperuserModule,
     BrowserAnimationsModule,
     MatDialogModule,
     MatButtonModule,
@@ -43,9 +45,7 @@ import { ControleUsuarioComponent } from './views/controle-usuario/controle-usua
     ProdutoService,
     UserService
   ],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

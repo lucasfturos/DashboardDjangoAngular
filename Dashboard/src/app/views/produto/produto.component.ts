@@ -52,7 +52,7 @@ export class ProdutoComponent implements OnInit {
       width: '80%',
       height: '90%',
       data: id,
-      panelClass: 'createContainer'
+      panelClass: 'createProdutoContainer'
     });
   }
 
