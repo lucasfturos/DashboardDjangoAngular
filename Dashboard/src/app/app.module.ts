@@ -1,3 +1,4 @@
+import { SuperuserComponent } from './views/superuser/superuser.component';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ProdutoService } from './services/produto/produto.service';
@@ -15,7 +16,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { PainelAdminComponent } from './views/painel-admin/painel-admin.component';
+import { ControleUsuarioComponent } from './views/controle-usuario/controle-usuario.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PainelAdminComponent } from './views/painel-admin/painel-admin.componen
     NotFoundComponent,
     HomeComponent,
     BaseDeDadoComponent,
-    PainelAdminComponent,
+    ControleUsuarioComponent,
+    SuperuserComponent,
   ],
   imports: [
     BrowserModule,

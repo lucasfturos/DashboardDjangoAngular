@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PainelAdminComponent } from './painel-admin.component';
+import { SuperuserComponent } from './superuser.component';
 
-describe('PainelAdminComponent', () => {
-  let component: PainelAdminComponent;
-  let fixture: ComponentFixture<PainelAdminComponent>;
+describe('SuperuserComponent', () => {
+  let component: SuperuserComponent;
+  let fixture: ComponentFixture<SuperuserComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PainelAdminComponent ]
+      declarations: [ SuperuserComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PainelAdminComponent);
+    fixture = TestBed.createComponent(SuperuserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

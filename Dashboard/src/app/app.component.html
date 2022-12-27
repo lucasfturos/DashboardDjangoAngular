@@ -58,11 +58,11 @@
             <li class="nav-item">
               <a
                 class="nav-link active text-nowrap"
-                [routerLink]="['/painel_admin/']"
+                [routerLink]="['/controle_usuario/']"
               >
                 <div class="list">
                   <ion-icon name="bug-outline"></ion-icon>
-                  Administração
+                  Controle de Usuários
                 </div>
               </a>
             </li>
@@ -70,7 +70,7 @@
           <div
             class="container-fluid d-flex justify-content-end flex-grow-3 pe-3"
           >
-            <a href="" target="_blank">
+            <a [routerLink]="['/login/']">
               <div class="login">
                 <ion-icon name="person-circle-outline"></ion-icon>
               </div>

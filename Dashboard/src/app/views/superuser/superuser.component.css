@@ -1,0 +1,61 @@
+.container {
+  margin: 0 auto;
+}
+h2 {
+  margin-top: 20px;
+}
+.card {
+  width: 50%;
+  margin-top: 50px;
+  background-color: #505262;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 40px 5px rgba(80, 82, 98, 1);
+  -moz-box-shadow: 0px 0px 40px 5px rgba(80, 82, 98, 1);
+  box-shadow: 0px 0px 40px 5px rgba(80, 82, 98, 1);
+  color: #cdcfd3;
+}
+
+label {
+  position: absolute;
+  top: -35px;
+  left: 5px;
+  column-gap: 10px;
+  align-items: center;
+  color: #cdcfd3;
+}
+
+.input-group {
+  position: relative;
+  top: 20px;
+  color: #cdcfd3;
+}
+
+.input-group-append {
+  width: 100%;
+}
+
+.btn-light {
+  background-color: #665dd1;
+  color: #cdcfd3;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+}
+
+.btn-light:hover {
+  opacity: 0.9;
+}
+
+input,
+input:-webkit-autofill,
+input:hover {
+  background-color: transparent !important;
+  color: #cdcfd3 !important;
+  border: none;
+  border-bottom: 5px solid #665dd1;
+}
+
+.form-control:focus {
+  border-color: #665dd1;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #665dd1;
+}
