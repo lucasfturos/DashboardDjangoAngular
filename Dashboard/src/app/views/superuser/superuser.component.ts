@@ -31,7 +31,8 @@ export class SuperuserComponent implements OnInit {
     this.userService.login(this.formUser.value.username, this.formUser.value.senha)
       .pipe(first()).subscribe(
         data => {
-          console.log(data)
+          console.log(data);
+          this.formUser.reset();
         });
   }
 

@@ -18,9 +18,9 @@ export class UserService {
     }
   }
 
-  login(username: string, senha: string) {
+  login(username: string, password: string) {
     return this.http.post<any>(this.apiRoot + `accounts/api/auth/`, {
-      username, senha
+      username, password
     }, this.httpOptions).pipe(
       map(user => {
         if (user) {

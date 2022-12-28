@@ -40,12 +40,13 @@ a:active {
   color: #cdcfd3;
   font-size: 20px;
   height: 100%;
-  width: 200px;
+  width: 300px;
   border-bottom-right-radius: 10px;
 }
 
 .login {
-  display: flex;
+  display: inline-flex;
+  cursor: pointer;
   align-self: flex-start;
   border-width: 0;
   font-size: 35px;
