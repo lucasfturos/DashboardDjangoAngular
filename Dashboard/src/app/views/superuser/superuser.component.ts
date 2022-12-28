@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { UserService } from './../../services/users/user.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -18,6 +19,7 @@ export class SuperuserComponent implements OnInit {
     private dialog: MatDialog,
     private formBuilder: NonNullableFormBuilder,
     private userService: UserService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -32,7 +34,7 @@ export class SuperuserComponent implements OnInit {
       .pipe(first()).subscribe(
         data => {
           console.log(data);
-          this.formUser.reset();
+          this.router.navigate(['']);
         });
   }
 
