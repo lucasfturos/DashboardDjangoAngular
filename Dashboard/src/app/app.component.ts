@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { filter, map } from 'rxjs';
+import { UserService } from './services/users/user.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { filter, map } from 'rxjs';
 export class AppComponent {
   constructor(
     private router: Router,
-    private titleService: Title
+    private titleService: Title,
+    private userService: UserService,
   ) {
     this.router.errorHandler = (error: any) => {
       let routerError = error.toString();
@@ -21,6 +23,10 @@ export class AppComponent {
         throw error;
       }
     }
+  }
+
+  logout() {
+    this.userService.logout();
   }
 
   ngOnInit() {

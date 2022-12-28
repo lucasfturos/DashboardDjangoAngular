@@ -5,6 +5,7 @@ class Funcionario(models.Model):
     nome_usuario = models.CharField(max_length=30)
     email_usuario = models.CharField(max_length=30)
     apelido_usuario = models.CharField(max_length=20)
+    senha_usuario= models.CharField(default='',max_length=20)
     id_niveis=models.ForeignKey('NiveisUsuario', max_length=10, on_delete=models.CASCADE)
     
     def __str__(self):

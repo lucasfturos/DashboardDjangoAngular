@@ -6,19 +6,20 @@
       <br />
     </div>
     <div class="card-body">
-      <form>
+      <form [formGroup]="formUser">
         <div class="input-group">
           <div class="input-group-append">
             <label>
               <span class="icon"
                 ><ion-icon name="mail-outline"></ion-icon
               ></span>
-              E-mail
+              Username
             </label>
             <input
               type="text"
               class="form-control"
-              placeholder="example@example.com"
+              placeholder="Username"
+              formControlName="username"
             />
           </div>
         </div>
@@ -31,12 +32,19 @@
               </span>
               Senha
             </label>
-            <input type="text" class="form-control" placeholder="Password" />
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              formControlName="senha"
+            />
           </div>
         </div>
       </form>
       <br />
-      <button class="btn btn-light">Entrar</button>
+      <button type="submit" class="btn btn-light" (click)="OnSubmit()">
+        Entrar
+      </button>
     </div>
     <div class="background-cadastro">
       <p class="text-cadastro">
