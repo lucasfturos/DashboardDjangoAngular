@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { UserService } from './../../services/users/user.service';
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { CreateComponent } from './create/create.component';
 import { NonNullableFormBuilder, FormGroup } from '@angular/forms';
 import { first } from 'rxjs';

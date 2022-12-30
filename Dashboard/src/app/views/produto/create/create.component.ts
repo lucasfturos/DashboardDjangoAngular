@@ -2,7 +2,7 @@ import { Produto } from '../../../models/produto.model';
 import { ProdutoService } from '../../../services/produto/produto.service';
 import { Component, Inject } from '@angular/core';
 import { NonNullableFormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA, MatLegacyDialogRef as MatDialogRef } from '@angular/material/legacy-dialog';
 
 @Component({
   selector: 'app-create',

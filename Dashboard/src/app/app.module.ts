@@ -12,8 +12,8 @@ import { BaseDeDadoComponent } from './views/base-de-dado/base-de-dado.component
 import { ProdutoModule } from './views/produto/produto.module';
 import { UserService } from './services/users/user.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material/button';
+import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
+import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ControleUsuarioComponent } from './views/controle-usuario/controle-usuario.component';

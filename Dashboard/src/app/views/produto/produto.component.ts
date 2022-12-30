@@ -2,7 +2,7 @@ import { DeleteProdutoComponent } from './delete/delete.component';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ProdutoService } from '../../services/produto/produto.service';
 import { Produto } from '../../models/produto.model';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { CreateComponent } from './create/create.component';
 
 
