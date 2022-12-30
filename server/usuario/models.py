@@ -1,11 +1,12 @@
+from django.contrib.auth.hashers import make_password
 from django.db import models
 
 class Funcionario(models.Model):
     id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
     nome_completo_usuario = models.CharField(default='',max_length=60)
-    email_usuario = models.CharField(default='',max_length=30)
-    apelido_usuario = models.CharField(default='',max_length=20)
-    senha_usuario = models.CharField(default='',max_length=20)
+    email_usuario = models.CharField(default='',max_length=30,null=False)
+    apelido_usuario = models.CharField(default='',max_length=20,null=False)
+    senha_usuario = models.CharField(default='',max_length=255, null=False)
     celular_usuario = models.CharField(default='',max_length=12)
     cpf_cnpj_usuario = models.CharField(default='',max_length=20)
     cep_usuario = models.CharField(default='', max_length=10)
@@ -14,10 +15,12 @@ class Funcionario(models.Model):
     token_usuario = models.CharField(default='',max_length=255)
     id_niveis=models.ForeignKey('NiveisUsuario', max_length=10, on_delete=models.CASCADE)
 
+    def save(self, *args, **kwargs):
+        self.senha_usuario = make_password(self.senha_usuario)
+        super(Funcionario, self).save(*args, **kwargs)
+
     def __str__(self):
-        return 'O Usuário {} é {}'.format(self.nome_usuario, self.id_niveis) 
-
-
+        return 'O Usuário {} é {}'.format(self.nome_completo_usuario, self.id_niveis) 
 
 class Cliente(models.Model):
     id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
