@@ -75,7 +75,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'admin.urls'
 
-
 OAUTH_AUTHORIZE_VIEW = 'principal.views.oauth_authorize'
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
