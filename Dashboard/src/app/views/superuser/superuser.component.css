@@ -29,33 +29,6 @@ h2 {
   border-radius: 10px;
 }
 
-.background-cadastro {
-  width: 100%;
-  background-color: rgba(205, 207, 211, 0.2);
-  height: 50px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  text-align: right;
-}
-
-.text-cadastro {
-  margin-top: 12px;
-  font-size: 16px;
-  margin-right: 10px;
-}
-
-.link-cadastro {
-  text-decoration: none;
-  color: #cdcfd3;
-}
-
-.link-cadastro:hover {
-  border: 5px solid #665dd1;
-  background-color: #665dd1;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
 label {
   position: absolute;
   top: -35px;

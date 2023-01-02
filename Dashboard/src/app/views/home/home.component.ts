@@ -1,4 +1,4 @@
-import { Produto } from '../../models/produto.model';
+import { Produto } from '../../models/produto/produto.model';
 import { ProdutoService } from '../../services/produto/produto.service';
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { Chart, registerables } from 'chart.js/auto';

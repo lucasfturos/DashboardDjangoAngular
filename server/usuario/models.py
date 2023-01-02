@@ -15,10 +15,6 @@ class Funcionario(models.Model):
     token_usuario = models.CharField(default='',max_length=255)
     id_niveis=models.ForeignKey('NiveisUsuario', max_length=10, on_delete=models.CASCADE)
 
-    def save(self, *args, **kwargs):
-        self.senha_usuario = make_password(self.senha_usuario)
-        super(Funcionario, self).save(*args, **kwargs)
-
     def __str__(self):
         return 'O Usuário {} é {}'.format(self.nome_completo_usuario, self.id_niveis) 
 

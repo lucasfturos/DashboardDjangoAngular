@@ -1,7 +1,7 @@
 import { DialogRef } from '@angular/cdk/dialog';
 import { ProdutoService } from '../../../services/produto/produto.service';
 import { Component, Inject, Optional } from '@angular/core';
-import { MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-delete-produto',

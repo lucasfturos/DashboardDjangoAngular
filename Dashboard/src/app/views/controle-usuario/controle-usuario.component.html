@@ -1,0 +1,144 @@
+<div class="container">
+  <div class="input-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Nome do funcionario ou cliente"
+      #searchInput
+      name="searchInput"
+      autocomplete="off"
+    />
+    <button class="btn btn-search" type="button">
+      <ion-icon name="search-outline"></ion-icon>
+    </button>
+    <button
+      class="btn btn-light btn-search"
+      type="button"
+      (click)="cleanSearch()"
+    >
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+  </div>
+  <div class="card">
+    <button
+      class="btn btn-collapse"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseFuncionario"
+      aria-expanded="false"
+      aria-controls="collapseFuncionario"
+    >
+      Funcionários
+      <ion-icon class="icon-collapse" name="chevron-down-outline"></ion-icon>
+    </button>
+    <div class="collapse" id="collapseFuncionario">
+      <div class="card">
+        <div class="estilo-titulo">
+          <h2 class="text-center titulo">Lista de todos os Funcionários</h2>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover table-color">
+            <thead>
+              <tr class="">
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Apelido</th>
+                <th scope="col">CEP</th>
+                <th scope="col">Endereço</th>
+                <th scope="col">Complemento</th>
+                <th scope="col">Nível</th>
+                <th scope="col" class="text-center">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Teste</td>
+                <td>Teste</td>
+                <td>Teste</td>
+                <td>Teste</td>
+                <td>Teste</td>
+                <td>Teste</td>
+                <td>Teste</td>
+                <td class="d-flex justify-content-center">
+                  <div class="grupo-acao">
+                    <button class="btn btn-light">
+                      <ion-icon name="expand-outline"></ion-icon>
+                    </button>
+                    <button class="btn btn-warning">
+                      <ion-icon name="create-outline"></ion-icon>
+                    </button>
+                    <button class="btn btn-danger" (click)="warningAlert()">
+                      <ion-icon name="close-outline"></ion-icon>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br />
+    </div>
+  </div>
+  <div class="card card-cliente">
+    <button
+      class="btn btn-collapse"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseCliente"
+      aria-expanded="false"
+      aria-controls="collapseCliente"
+    >
+      Clientes
+      <ion-icon class="icon-collapse" name="chevron-down-outline"></ion-icon>
+    </button>
+    <div class="collapse" id="collapseCliente">
+      <div class="card">
+        <div class="estilo-titulo">
+          <h2 class="text-center titulo">Lista de todos os Clientes</h2>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover table-color">
+            <thead>
+              <tr class="">
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Celular</th>
+                <th scope="col">CPF/CNPJ</th>
+                <th scope="col">CEP</th>
+                <th scope="col">Endereço</th>
+                <th scope="col">Complemento</th>
+                <th scope="col" class="text-center">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Teste</td>
+                <td>Teste</td>
+                <td>Teste</td>
+                <td>Teste</td>
+                <td>Teste</td>
+                <td>Teste</td>
+                <td>Teste</td>
+                <td class="d-flex justify-content-center">
+                  <div class="grupo-acao">
+                    <button class="btn btn-light">
+                      <ion-icon name="expand-outline"></ion-icon>
+                    </button>
+                    <button class="btn btn-warning">
+                      <ion-icon name="create-outline"></ion-icon>
+                    </button>
+                    <button class="btn btn-danger" (click)="warningAlert()">
+                      <ion-icon name="close-outline"></ion-icon>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,89 @@
+.btn-light {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 60px;
+  height: 60px;
+}
+
+.input-group-text {
+  background-color: #665dd1;
+  color: #cdcfd3;
+  border: 2px solid #665dd1;
+  height: 60px;
+}
+
+.btn-search {
+  background-color: #665dd1;
+  color: #cdcfd3;
+  border: none;
+  margin-left: 2px;
+}
+
+.btn-search:hover {
+  opacity: 0.9;
+}
+
+.input-group {
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.table-color {
+  background-color: #505262;
+  color: #cdcfd3;
+}
+
+.table-hover td {
+  color: #cdcfd3;
+}
+
+.card {
+  background-color: #505262;
+}
+
+.estilo-titulo {
+  border: 10px solid #665dd1;
+  background-color: #665dd1;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.titulo {
+  color: #cdcfd3;
+}
+
+.icon-collapse {
+  float: right;
+  margin-top: 5px;
+}
+
+.btn-collapse {
+  background-color: #665dd1;
+  color: #cdcfd3;
+  height: 60px;
+}
+
+.card-cliente {
+  margin-top: 10px;
+}
+.btn-warning,
+.btn-danger,
+.btn-light {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  margin-right: 2px;
+}
+.grupo-acao {
+  display: inline-flex;
+}
+
+.show-span {
+  opacity: 0;
+}
+.show-span:hover {
+  opacity: 1;
+}
