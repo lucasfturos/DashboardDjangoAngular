@@ -1,4 +1,3 @@
-from django.contrib.auth.hashers import make_password
 from django.db import models
 
 class Funcionario(models.Model):

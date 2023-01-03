@@ -80,10 +80,3 @@
 .grupo-acao {
   display: inline-flex;
 }
-
-.show-span {
-  opacity: 0;
-}
-.show-span:hover {
-  opacity: 1;
-}
